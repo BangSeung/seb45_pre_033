@@ -20,9 +20,11 @@ const AnswerContainer = styled.div`
 
 const MyPageAnswer = ({ questions }) => {
   return (
-    <Main>
-      {questions!==[]?questions.map((el,idx)=><Qusetion key={idx} question={el}/>):<AnswerContainer>아직 작성한 질문이 없습니다.</AnswerContainer>}
-    </Main>
+    <>
+    {questions?<Main>
+      {questions.length===0?<AnswerContainer>아직 작성한 질문이 없습니다.</AnswerContainer>:questions.map((el,idx)=><Qusetion key={idx} question={el}/>)}
+    </Main>:<></>}
+    </>
   );
 };
 
